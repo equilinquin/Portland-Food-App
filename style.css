@@ -7,17 +7,32 @@
             -webkit-text-stroke-color: black;
 }
 
+a {
+  padding: 10px;
+}
+
+/* Stickey Footer */
+
+.row {
+  min-height: 100%;
+  margin-bottom: -75px; 
+}
+
+.row:after {
+  content: "";
+  display: block;
+}
+
+html,
 body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
+height: 100%;
 }
 
-main {
-  flex: 1 0 auto;
+.foot, .row:after {
+  height: 75px; 
 }
 
-.page-footer {
- margin-top: 100px; 
- background-color: rgb(1, 160, 160);
-}
+/* End Stickey Footer*/
+
+
+
