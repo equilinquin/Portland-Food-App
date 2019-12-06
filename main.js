@@ -1,20 +1,30 @@
 
 
-    $(document).ready(function(){
-      $('select').formSelect();
+$(document).ready(function () {
+  $('select').formSelect();
 
 
   $.ajax({
-      method: "GET",
-      crossDomain: true,
-      url: "https://developers.zomato.com/api/v2.1/search?entity_id=286&entity_type=city&establishment_type=81",
-      dataType: "json",
-      async: true,
-      headers: {
-        "user-key": "3247f4fa7ee79cabb69997b6827c2e80"
+    method: "GET",
+    crossDomain: true,
+    url: "https://developers.zomato.com/api/v2.1/search?entity_id=286&entity_type=city&establishment_type=81",
+    dataType: "json",
+    async: true,
+    headers: {
+      "user-key": "3247f4fa7ee79cabb69997b6827c2e80"
+    }
+  }).then(function (response) {
+
+    console.log(response);
+
+    $("button").on("click", function () {
+      for (var i = 0; i < 20; i++) {
+        var list = $("<p>").text(response.restaurants[i].restaurant.name);
+        $(".results").append(list);
       }
-  }).then(function (response){
-      console.log(response);
-      
+
+    })
+
+
   })
 });
