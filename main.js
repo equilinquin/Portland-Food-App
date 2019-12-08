@@ -52,38 +52,41 @@ $(document).ready(function () {
       }
     }).then(function (response) {
 
-      $("ul").empty();
       $("ul").show();
+
+      $("ul").empty();
 
       console.log(response);
 
-      for (var i = 0; i < 20; i++) {
-        $(".collapsible").append(listRow);
-        var listRow = $("<li>").attr("class", "row");
-        var ListTitle = $("<div>").text(response.restaurants[i].restaurant.name + " -- Rating: " + response.restaurants[i].restaurant.user_rating.aggregate_rating + " -- Price range: " + response.restaurants[i].restaurant.price_range + "/5").attr("class", "collapsible-header");
-        listRow.append(ListTitle);
+      for (var i = 0; i < 10; i++) {
+        $(".collapsible").append(listLi);
+        var listLi = $("<li>")
+        var listHeader = $("<div>").text(response.restaurants[i].restaurant.name + " -- Rating: " + response.restaurants[i].restaurant.user_rating.aggregate_rating + " -- Price range: " + response.restaurants[i].restaurant.price_range + "/5").attr("class", "collapsible-header");
+        listLi.append(listHeader);
         var listBody = $("<div>").attr("class", "collapsible-body");
-        listRow.append(listBody);
+        listLi.append(listBody);
         var listImg = $("<img>").attr("src", response.restaurants[i].restaurant.featured_image);
         listImg.attr("class", "responsive-img materialboxed col s2");
+        listImg.css("width", "90px");
         listBody.append(listImg);
-        var listAddress = $("<p>").text(response.restaurants[i].restaurant.location.address);
+        var listAddress = $("<span>").text(response.restaurants[i].restaurant.location.address).attr("class", "low-text");
         listBody.append(listAddress);
-        var listPhone = $("<p>").text(response.restaurants[i].restaurant.phone_numbers);
+        listAddress.after("<br/>")
+        var listPhone = $("<span>").text(response.restaurants[i].restaurant.phone_numbers).attr("class", "low-text");
         listBody.append(listPhone);
-      }
+      };
 
 
-
-
-
-      
       var elem = document.querySelector('.collapsible.expandable');
       var instance = M.Collapsible.init(elem, {
         accordion: false
       });
+      $('.materialboxed').materialbox();
 
-        $('.materialboxed').materialbox();
+
+      
+
+
       
 
 
@@ -102,6 +105,7 @@ $(document).ready(function () {
   }
 
 };
+
 
 
 });

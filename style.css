@@ -38,7 +38,8 @@ ul {
   display: none;
 }
 
-img {
-  height: fit-content;
+span {
+  padding: 5px;
 }
+
 
