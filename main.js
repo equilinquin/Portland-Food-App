@@ -60,7 +60,7 @@ $(document).ready(function () {
       for (var i = 0; i < 20; i++) {
         $(".collapsible").append(listRow);
         var listRow = $("<li>").attr("class", "row");
-        var ListTitle = $("<div>").text(response.restaurants[i].restaurant.name).attr("class", "collapsible-header");
+        var ListTitle = $("<div>").text(response.restaurants[i].restaurant.name + " -- Rating: " + response.restaurants[i].restaurant.user_rating.aggregate_rating + " -- Price range: " + response.restaurants[i].restaurant.price_range + "/5").attr("class", "collapsible-header");
         listRow.append(ListTitle);
         var listBody = $("<div>").attr("class", "collapsible-body");
         listRow.append(listBody);
@@ -71,10 +71,6 @@ $(document).ready(function () {
         listBody.append(listAddress);
         var listPhone = $("<p>").text(response.restaurants[i].restaurant.phone_numbers);
         listBody.append(listPhone);
-        var listPrice = $("<p>").text("Price: " + response.restaurants[i].restaurant.currency);
-        listBody.append(listPrice);
-        console.log(ListTitle);
-
       }
 
 
