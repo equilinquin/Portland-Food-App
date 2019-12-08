@@ -34,5 +34,11 @@ height: 100%;
 
 /* End Stickey Footer*/
 
+ul {
+  display: none;
+}
 
+img {
+  height: fit-content;
+}
 

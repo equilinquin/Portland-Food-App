@@ -24,35 +24,38 @@
       <div class="input-field col s12">
         <label>Cuisine Type</label>
         <br><br>
-        <select class=" browser-default">
+        <select class="cuisine-type browser-default">
           <option value="" disabled selected>Choose your option</option>
-          <option value="1">Option 1</option>
-          <option value="2">Option 2</option>
-          <option value="3">Option 3</option>
+          <option value="81">Food Truck</option>
+          <option value="1">Café</option>
+          <option value="295">Noodle Shop</option>
+          <option value="284">Juice Bar</option>
+          <option value="275">Pizzeria</option>
+          <option value="283">Brewery</option>
+          <option value="18">Fine Dining</option>
         </select>
 
       </div>
 
       <div class="input-field col s12">
-        <label>????</label>
+        <label>Sort</label>
         <br><br>
-        <select class=" browser-default">
+        <select class="sort-type browser-default">
           <option value="" disabled selected>Choose your option</option>
-          <option value="1">Option 1</option>
-          <option value="2">Option 2</option>
-          <option value="3">Option 3</option>
+          <option value="cost">Cost</option>
+          <option value="rating">Rating</option>
+          <option value="real_distance">Distance</option>
         </select>
 
       </div>
 
       <div class="input-field col s12">
-        <label>???</label>
+        <label>Order</label>
         <br><br>
-        <select class=" browser-default">
+        <select class="ordering-type browser-default">
           <option value="" disabled selected>Choose your option</option>
-          <option value="1">Option 1</option>
-          <option value="2">Option 2</option>
-          <option value="3">Option 3</option>
+          <option value="asc">Ascending</option>
+          <option value="dsc">Descending</option>
         </select>
 
       </div>
@@ -65,9 +68,9 @@
 
     <div class="col s12 m8 l9">
       <h5>Results:</h5>
-      <div class="results">
+      <ul class="collapsible expandable">
         <!--ajax calls get appended here-->
-      </div>
+      </ul>
     </div>
 
   </div>
