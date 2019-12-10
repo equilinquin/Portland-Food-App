@@ -7,18 +7,18 @@
             -webkit-text-stroke-color: black;
 }
 
-a {
+footer a {
   padding: 10px;
 }
 
 /* Stickey Footer */
 
-.row {
+.mainRow {
   min-height: 100%;
   margin-bottom: -75px; 
 }
 
-.row:after {
+.mainRow:after {
   content: "";
   display: block;
 }
@@ -28,7 +28,7 @@ body {
 height: 100%;
 }
 
-.foot, .row:after {
+.foot, .mainRow:after {
   height: 75px; 
 }
 
@@ -38,8 +38,19 @@ ul {
   display: none;
 }
 
-span {
-  padding: 5px;
+p {
+  margin: 2px;
 }
+
+h6 {
+  text-decoration: underline;
+  text-decoration-color: turquoise;
+}
+
+.material-placeholder {
+  padding-bottom: 10px;
+}
+
+
 
 
