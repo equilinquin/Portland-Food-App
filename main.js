@@ -2,16 +2,11 @@
 
 $(document).ready(function () {
   $('select').formSelect();
+  $('.collapsible').collapsible();
+
   var establishmentType;
   var sortingType;
   
-
-
-  // $(".cuisine-type").on("change", function () {
-  //   establishmentType = $(".cuisine-type").find(":selected").val();
-  //   getZomatoData(establishmentType)
-  //   console.log("change event fired for cuisine type");
-  // })
 
 
 
@@ -58,47 +53,51 @@ $(document).ready(function () {
 
       console.log(response);
 
-      for (var i = 0; i < 10; i++) {
+      for (var i = 0; i < 12; i++) {
         $(".collapsible").append(listLi);
-        var listLi = $("<li>")
+        var listLi = $("<li>").attr("class", "responsive");
         var listHeader = $("<div>").text(response.restaurants[i].restaurant.name + " -- Rating: " + response.restaurants[i].restaurant.user_rating.aggregate_rating + " -- Price range: " + response.restaurants[i].restaurant.price_range + "/5").attr("class", "collapsible-header");
         listLi.append(listHeader);
-        var listBody = $("<div>").attr("class", "collapsible-body");
+        var listBody = $("<div>").attr("class", "collapsible-body row");
         listLi.append(listBody);
+        var firstR = $("<section>").attr("class", "col s5 m3 l3");
+        listBody.append(firstR);
         var listImg = $("<img>").attr("src", response.restaurants[i].restaurant.featured_image);
-        listImg.attr("class", "responsive-img materialboxed col s2");
-        listImg.css("width", "90px");
-        listBody.append(listImg);
-        var listAddress = $("<span>").text(response.restaurants[i].restaurant.location.address).attr("class", "low-text");
-        listBody.append(listAddress);
-        listAddress.after("<br/>")
-        var listPhone = $("<span>").text(response.restaurants[i].restaurant.phone_numbers).attr("class", "low-text");
-        listBody.append(listPhone);
+        listImg.attr("class", "materialboxed responsive-img");
+        listImg.css("width", "200px");
+        firstR.append(listImg);
+        var listTime = $("<p>").html("<h6> Hours of Operation: ");
+        firstR.append(listTime);
+        var TimeData = $("<p>").text(response.restaurants[i].restaurant.timings).attr("class", "left-align");
+        firstR.append(TimeData);
+        var listText = $("<section>").attr("class", "container col s7 m3 l3");
+        listBody.append(listText);
+        var listAddress = $("<p>").html("<h6> Address: ");
+        listText.append(listAddress);
+        var addressData = $("<p>").text(response.restaurants[i].restaurant.location.address).attr("class", "left-align");
+        listText.append(addressData);
+        var listPhone = $("<p>").html("<h6> Phone: ");
+        listText.append(listPhone);
+        var phoneData = $("<p>").text(response.restaurants[i].restaurant.phone_numbers).attr("class", "left-align");
+        listText.append(phoneData);
+        var listHL = $("<p>").html("<h6> Highlights: ");
+        listText.append(listHL);
+        var hlData = $("<p>").text(response.restaurants[i].restaurant.highlights).attr("class", "left-align");
+        listText.append(hlData);
+        var mapColumn = $("<section>").attr("Class", "col s12 m6 l6");
+        listBody.append(mapColumn);
+        var listImg2 = $("<img>").attr("src", "pmap.gif");
+        listImg2.attr("class", "responsive-img");
+        listImg2.css("width", "400px");
+        mapColumn.append(listImg2);
+
       };
 
 
-      var elem = document.querySelector('.collapsible.expandable');
-      var instance = M.Collapsible.init(elem, {
-        accordion: false
-      });
       $('.materialboxed').materialbox();
 
 
       
-
-
-      
-
-
-      // console.log(response);
-      // $(".results").html("");
-      // for (var i = 0; i < 20; i++) {
-      //   var list = $("<p>").text(response.restaurants[i].restaurant.name + "<br>" + response.restaurants[i].restaurant.location.address);
-      //   $(".results").append(list);
-      //   console.log(response);
-      // }
-
-
 
     })
 
