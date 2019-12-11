@@ -47,49 +47,42 @@ $(document).ready(function () {
       }
     }).then(function (response) {
       $("h5").show();
-      
+
       $("ul").show();
 
       $("ul").empty();
 
       console.log(response);
 
-      for (var i = 0; i < 12; i++) {
+      for (var i = 0; i < 2; i++) {
         $(".collapsible").append(listLi);
         var listLi = $("<li>").attr("class", "responsive");
-        var listHeader = $("<div>").text(response.restaurants[i].restaurant.name + " -- Rating: " + response.restaurants[i].restaurant.user_rating.aggregate_rating + " -- Price range: " + response.restaurants[i].restaurant.price_range + "/5").attr("class", "collapsible-header");
+        var listHeader = $("<div>").attr("class", "collapsible-header");
         listLi.append(listHeader);
+        var placeName = $("<h7>").text(response.restaurants[i].restaurant.name).attr("class", "blue-text text-darken-2");
+        listHeader.append(placeName);
         var listBody = $("<div>").attr("class", "collapsible-body row");
         listLi.append(listBody);
         var firstRow = $("<section>").attr("class", "col s5 m3 l3");
         listBody.append(firstRow);
         var listImg = $("<img>").attr("src", response.restaurants[i].restaurant.featured_image);
-
-        listImg.attr("class", "responsive-img materialboxed col s2");
-        listImg.css("width", "90px");
-        listBody.append(listImg);
-        var listAddress = $("<span>").text(response.restaurants[i].restaurant.location.address).attr("class", "low-text");
-        listBody.append(listAddress);
-        listAddress.after("<br/>")
-        var listPhone = $("<span>").text(response.restaurants[i].restaurant.phone_numbers).attr("class", "low-text");
-        listBody.append(listPhone);
-
-        var lat = response.restaurants[i].restaurant.location.latitude;
-        var lng = response.restaurants[i].restaurant.location.longitude;
-        var mapURL = "https://maps.googleapis.com/maps/api/staticmap?center="+lat+","+lng+"&zoom=16&size=600x300&maptype=roadmap&markers=color:red%7Clabel:%7C"+lat+","+lng+"&key=AIzaSyCMk_G_rQBW5_9MHyIw_n7NUq5CT1RP3Nw"
-        var googleMap = $("<br><img>").attr("src", mapURL)
-        listBody.append(googleMap)
         listImg.attr("class", "materialboxed responsive-img");
         listImg.css("width", "200px");
         firstRow.append(listImg);
-        var listMenu = $("<a>").html("Menu").attr({"href": response.restaurants[i].restaurant.menu_url, "target": "_blank", "class": "menuLink"});
+        var listMenu = $("<a>").html("Menu").attr({"href": response.restaurants[i].restaurant.menu_url, "target": "_blank"});
         firstRow.append(listMenu);
         var listTime = $("<p>").html("<h6> Hours of Operation: ");
         firstRow.append(listTime);
         var TimeData = $("<p>").text(response.restaurants[i].restaurant.timings).attr("class", "left-align");
         firstRow.append(TimeData);
+        var ratingBorder = $("<div>");
+        firstRow.append(ratingBorder);
+        var ratingText = $("<p>").text("Rating").attr("class", "col 2").css("border-left", "3px solid turquoise");
+        ratingBorder.append(ratingText);
+        var ratingIcon = $("<div>").html("<p>" + response.restaurants[i].restaurant.user_rating.rating_obj.title.text).css({"background": response.restaurants[i].restaurant.user_rating.rating_obj.bg_color.type,}).attr("class", "col 1");
+        ratingBorder.append(ratingIcon); 
         var listText = $("<section>").attr("class", "container col s7 m3 l3");
-        listBody.append(listText);
+        listBody.append(listText);  
         var listAddress = $("<p>").html("<h6> Address: ");
         listText.append(listAddress);
         var addressData = $("<p>").text(response.restaurants[i].restaurant.location.address).attr("class", "left-align");
@@ -104,14 +97,14 @@ $(document).ready(function () {
         listText.append(hlData);
         var mapColumn = $("<section>").attr("Class", "col s12 m6 l6");
         listBody.append(mapColumn);
-        var listImg2 = $("<img>").attr("src", "pmap.gif");
-        listImg2.attr("class", "responsive-img");
-        listImg2.css("width", "400px");
-        mapColumn.append(listImg2);
+        var lat = response.restaurants[i].restaurant.location.latitude;
+        var lng = response.restaurants[i].restaurant.location.longitude;
+        var mapURL = "https://maps.googleapis.com/maps/api/staticmap?center="+lat+","+lng+"&zoom=16&size=600x300&maptype=roadmap&markers=color:red%7Clabel:%7C"+lat+","+lng+"&key=AIzaSyCMk_G_rQBW5_9MHyIw_n7NUq5CT1RP3Nw"
+        var googleMap = $("<img>").attr("src", mapURL).attr("class", "responsive-img");
+        mapColumn.append(googleMap);
 
 
       };
-
 
       $('.materialboxed').materialbox();
     
