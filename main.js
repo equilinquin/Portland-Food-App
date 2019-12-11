@@ -43,7 +43,7 @@ $(document).ready(function () {
       dataType: "json",
       async: true,
       headers: {
-        "user-key": "3247f4fa7ee79cabb69997b6827c2e80"
+        "user-key": "3247f4fa7ee79cabb69997b6827c2e80"   // backup key: 9751e1b18a485696e9aa871649477ecd //
       }
     }).then(function (response) {
       $("h5").show();
@@ -54,7 +54,7 @@ $(document).ready(function () {
 
       console.log(response);
 
-      for (var i = 0; i < 2; i++) {
+      for (var i = 0; i < 20; i++) {
         $(".collapsible").append(listLi);
         var listLi = $("<li>").attr("class", "responsive");
         var listHeader = $("<div>").attr("class", "collapsible-header");
