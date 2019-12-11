@@ -6,11 +6,12 @@
 
 * We wanted to make an application that would allow the user to select different parameters and then, from those preferences, a generated list would be provided including: 
 
+* name, 
+* price range, 
+* rating,
 * A photo of the establishment, 
 * location,
-* menu,
-* price range, 
-* rating, 
+* link to menu,
 * and hours of operation.
 
 ## How it works
@@ -38,3 +39,5 @@
 3. Yelp API (Third-party)
 
 Using jQuery, each element of the DOM that was responsible for dynamic change (ie, dropdowns) was selected, and then an Ajax call was made to the APIs (one to Zomato to pull the restaraunt information and one to Google maps which displayed the map).
+
+https://img.shields.io/badge/Cuisine-Support%20Local%20Spots!-brightgreen
