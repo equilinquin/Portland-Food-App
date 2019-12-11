@@ -18,9 +18,14 @@
 * 'The Best of Portland's Cuisine" application applies user selected parameters to display resteraunt results.
 
 * On the left side of the page there are 3 dropdowns/selectors:
+
  1. Cuisine - Select establishment type (cafe, brewery, foodtruck, etc)
- 2. Sort - Choose from three different 
- 3. Order 
+ 2. Sort - This dropdown contains ("cost", "rating", and "distance")
+ Depending on the option you select, this will allow the API to pull/display the relevent info on the results section.
+
+ 3. Order - This makes the list either "ascending" or "descending", so you could look from price highest-lowest, vice-versa, and et cetera.
+
+ After the three selecters have some information, the right side of the page will automatically populate with the relevant search results.         
 
 
 
