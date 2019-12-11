@@ -41,5 +41,9 @@ ul {
 span {
   padding: 5px;
 }
-
-
+h5 {
+  display: none;
+}
+.carousel {
+  margin-top: 40px;
+}

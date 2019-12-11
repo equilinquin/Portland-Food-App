@@ -51,7 +51,8 @@ $(document).ready(function () {
         "user-key": "3247f4fa7ee79cabb69997b6827c2e80"
       }
     }).then(function (response) {
-
+      $("h5").show();
+      
       $("ul").show();
 
       $("ul").empty();
@@ -74,6 +75,12 @@ $(document).ready(function () {
         listAddress.after("<br/>")
         var listPhone = $("<span>").text(response.restaurants[i].restaurant.phone_numbers).attr("class", "low-text");
         listBody.append(listPhone);
+
+        var lat = response.restaurants[i].restaurant.location.latitude;
+        var lng = response.restaurants[i].restaurant.location.longitude;
+        var mapURL = "https://maps.googleapis.com/maps/api/staticmap?center="+lat+","+lng+"&zoom=16&size=600x300&maptype=roadmap&markers=color:red%7Clabel:%7C"+lat+","+lng+"&key=AIzaSyCMk_G_rQBW5_9MHyIw_n7NUq5CT1RP3Nw"
+        var googleMap = $("<br><img>").attr("src", mapURL)
+        listBody.append(googleMap)
       };
 
 
@@ -82,7 +89,7 @@ $(document).ready(function () {
         accordion: false
       });
       $('.materialboxed').materialbox();
-
+    
 
       
 
