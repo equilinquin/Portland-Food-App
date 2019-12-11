@@ -41,6 +41,13 @@ ul {
 p {
   margin: 2px;
 }
+h5 {
+  display: none;
+}
+.carousel {
+  margin-top: 40px;
+}
+
 
 h6 {
   text-decoration: underline;
