@@ -1,24 +1,6 @@
 
 
 $(document).ready(function () {
-<<<<<<< HEAD
-
-  var favs = ["Marukin", "Fire%20on%20the%20Mountain%20Buffalo%20Wings", "Sizzle%20Pie", "Russell%20Street%20Bar.B.Que", "Screen%20Door", "Portland%20City%20Grill", "Pambiche", "Grassa", "Nicholas", "King%20Burrito", "Pip", "Sivalai%20Thai", "808%20Grindz"];
-  var href = ["#one!", "#two!", "#three!", "#four!", "#five!", "#six!", "#seven!", "#eight!", "#nine!", "#ten!", "#eleven!", "#twelve!", "#thirteen!", "#fourteen!"];
-
-  //     //  for (var i = 0; i < href.length; i++) {
-
-  //     // //var img = $("<img>").attr("src", getImg)
-  //     // divSlide.attr("href", val);
-
-  //     //   //$(".carousel").append(divSlide);
-  //     // };
-
-function getData() {
-  $.each(favs, function (i, fav) {
-    var url = "https://developers.zomato.com/api/v2.1/search?entity_id=286&entity_type=city&q=" + fav;
-
-=======
   
   var favs = ["Marukin", "Fire%20on%20the%20Mountain%20Buffalo%20Wings", "Sizzle%20Pie", "Russell%20Street%20Bar.B.Que", "Screen%20Door",  "Portland%20City%20Grill", "Pambiche", "Grassa", "Nicholas", "King%20Burrito", "Pip", "Sivalai%20Thai", "808%20Grindz"];
   var href = ["#one!", "#two!", "#three!", "#four!", "#five!", "#six!", "#seven!", "#eight!", "#nine!", "#ten!", "#eleven!", "#twelve!", "#thirteen!", "#fourteen!"];
@@ -35,7 +17,6 @@ function getData() {
     $.each(favs, function(i, fav) {
     var url = "https://developers.zomato.com/api/v2.1/search?entity_id=286&entity_type=city&q=" + fav;
   
->>>>>>> 1cf0ce94bde6a6d223d797e8d3e5e09728730693
     $.ajax({
       method: "GET",
       crossDomain: true,
@@ -45,30 +26,6 @@ function getData() {
       headers: {
         "user-key": "3247f4fa7ee79cabb69997b6827c2e80"
       }
-<<<<<<< HEAD
-
-    }).then(function (data) {
-
-      var getInfo = data.restaurants[0].restaurant;
-      var getname = getInfo.name;
-      var location = getInfo.location.address;
-      var rating = getInfo.user_rating.aggregate_rating;
-      var getImg = getInfo.featured_image;
-      var img = $("<img>").attr("src", getImg)
-      var divSlide = $("<div>").attr("class", "carousel-item");
-      divSlide.attr("href", href[i])
-      var h2 = $("<h2>");
-      var p = $("<p>");
-      var a = $("<a>").attr("class", "carousel-item")
-      a.attr("href", href[i]);
-      a.append(img)
-
-      h2.text(getname);
-      p.html(location + "<br>" + rating);
-      divSlide.append(h2, p, a)
-      $(".carousel").append(divSlide, a)
-
-=======
   
   }).then(function (data) {
     
@@ -89,18 +46,14 @@ function getData() {
     p.html(location + "<br>" + rating);
     divSlide.append(h2, p, a)
     $(".carousel").append(divSlide, a)
->>>>>>> 1cf0ce94bde6a6d223d797e8d3e5e09728730693
 
     
 
     });
   });
-<<<<<<< HEAD
-=======
 });
->>>>>>> 1cf0ce94bde6a6d223d797e8d3e5e09728730693
 
-};
+
 getData();
 
 $("a").promise().done(function (){
@@ -108,30 +61,6 @@ $("a").promise().done(function (){
 
 
 
-<<<<<<< HEAD
-  var elems = document.querySelectorAll('.carousel');
-  var instances = M.Carousel.init(elems);
-  var instance = M.Carousel.init({
-    fullWidth: true,
-    indicators: true
-  });
-});
-
-  // init();
-  // function init(){
-
-  // $('.carousel-item').carousel({
-  //     fullWidth: true,
-  //     indicators: true
-  // });
-  // }
-
-
-
-
-  //}));
-  //});
-=======
 
 $('.carousel.carousel-item').carousel({
     fullWidth: true,
@@ -144,7 +73,6 @@ $('.carousel.carousel-item').carousel({
 
 //}));
 //});
->>>>>>> 1cf0ce94bde6a6d223d797e8d3e5e09728730693
 
 
 

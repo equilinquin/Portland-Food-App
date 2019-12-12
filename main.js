@@ -54,6 +54,8 @@ $(document).ready(function () {
 
       $("ul").empty();
 
+      $("h4").empty();
+
       console.log(response);
 
       for (var i = 0; i < 20; i++) {

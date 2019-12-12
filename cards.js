@@ -1,6 +1,6 @@
 
 
-$(document).ready(function () {
+$(document).ready(function recomendedData() {
 
     var favs = ["Marukin", "Fire%20on%20the%20Mountain%20Buffalo%20Wings", "Sizzle%20Pie", "Russell%20Street%20Bar.B.Que", "Screen%20Door", "Portland%20City%20Grill", "Pambiche", "Grassa", "Nicholas", "King%20Burrito", "Pip", "Sivalai%20Thai", "808%20Grindz"];
     var row = $("<div>").attr("class", "row")
@@ -50,5 +50,13 @@ $(document).ready(function () {
 
       });
     });
+
+    $(".recomend").on("click", function() { 
+      $("ul").empty();
+      $("h5").empty();
+      $("h4").show().text("Developer's Recommendations");
+      recomendedData();
+    })
+
 });
   
