@@ -104,10 +104,18 @@ $(document).ready(function () {
         var mapURL = "https://maps.googleapis.com/maps/api/staticmap?center="+lat+","+lng+"&zoom=16&size=600x300&maptype=roadmap&markers=color:red%7Clabel:%7C"+lat+","+lng+"&key=AIzaSyCMk_G_rQBW5_9MHyIw_n7NUq5CT1RP3Nw"
         var googleMap = $("<img>").attr("src", mapURL).attr("class", "responsive-img");
         mapColumn.append(googleMap);
+<<<<<<< HEAD
+=======
 
+>>>>>>> 1cf0ce94bde6a6d223d797e8d3e5e09728730693
 
       };
 
+<<<<<<< HEAD
+      };
+
+=======
+>>>>>>> 1cf0ce94bde6a6d223d797e8d3e5e09728730693
       $('.materialboxed').materialbox();
     
 
