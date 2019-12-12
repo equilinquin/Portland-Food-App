@@ -38,7 +38,7 @@ ul {
   display: none;
 }
 
-span {
+.low-text {
   padding: 5px;
 }
 h5 {
@@ -46,7 +46,4 @@ h5 {
 }
 .carousel {
   margin-top: 40px;
-}
-h2 {
-  color: black;
 }
