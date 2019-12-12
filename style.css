@@ -38,6 +38,9 @@ ul {
   display: none;
 }
 
+.low-text {
+  padding: 5px;
+}
 p {
   margin: 2px;
 }

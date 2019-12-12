@@ -46,6 +46,8 @@ $(document).ready(function () {
         "user-key": "3247f4fa7ee79cabb69997b6827c2e80"   // backup key: 9751e1b18a485696e9aa871649477ecd //
       }
     }).then(function (response) {
+      $(".small").css("display", "none")
+
       $("h5").show();
 
       $("ul").show();
