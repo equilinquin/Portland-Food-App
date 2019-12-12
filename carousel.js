@@ -40,8 +40,7 @@ $(document).ready(function () {
     var a = $("<a>").attr("class", "carousel-item")
     a.attr("href", href[i]);
     a.append(img)
-
-     h2.text(getname);
+    h2.text(getname);
     p.html(location + "<br>" + rating);
     divSlide.append(h2, p, a)
     $(".carousel").append(divSlide, a)
@@ -57,7 +56,7 @@ $(document).ready(function () {
 
 
 
-$('.carousel.carouse-item').carousel({
+$('.carousel.carousel-item').carousel({
     fullWidth: true,
     indicators: true
 });
