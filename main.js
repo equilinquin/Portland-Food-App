@@ -48,6 +48,8 @@ $(document).ready(function () {
     }).then(function (response) {
       $(".small").css("display", "none")
 
+      
+
       $("h5").show();
 
       $("ul").show();

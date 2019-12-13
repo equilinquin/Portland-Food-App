@@ -52,9 +52,12 @@ $(document).ready(function recomendedData() {
     });
 
     $(".recomend").on("click", function() { 
+      row.empty();
       $("ul").empty();
       $("h5").empty();
-      $("h4").show().text("Developer's Recommendations");
+      $(".card-container").empty();
+      var h4 = $("<h4>").text("Developer's Recommendations");
+      $(".card-container").append(h4);
       recomendedData();
     })
 
