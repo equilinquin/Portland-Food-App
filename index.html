@@ -1,35 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-          
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="row">
-        <div class="col s12 m12 l12">
-          <div class="card">
-            <div class="card-image">
-              <img src="photos/index.jpg">
-              <span class="card-title">Portlands Best Eats</span>
-            </div>
-            <div class="card-content">
-              <p>Our goal is to highlight the best Portland food spots,
-                that fly under the radar of a lot of other food search sites</p>
-              </div>
-            <div class="card-action">
-              <a href="card.html">To the FOOD!</a>
-            </div>
-          </div>
-        </div>
+
+  <header name="top" class="brand-logo center">The Best of Portland's Cuisine</header>
+
+  <div class="row mainRow">
+
+    <div class="col s12 m4 l3 inputRow">
+
+      <div class="input-field col s12">
+        <label>Cuisine Type</label>
+        <br><br>
+        <select class="cuisine-type browser-default">
+          <option value="" disabled selected>Choose your option</option>
+          <option value="81">Food Truck</option>
+          <option value="1">Café</option>
+          <option value="295">Noodle Shop</option>
+          <option value="284">Juice Bar</option>
+          <option value="275">Pizzeria</option>
+          <option value="283">Brewery</option>
+          <option value="18">Fine Dining</option>
+        </select>
+
       </div>
-  
+
+      <div class="input-field col s12">
+        <label>Sort</label>
+        <br><br>
+        <select class="sort-type browser-default">
+          <option value="" disabled selected>Choose your option</option>
+          <option value="cost">Cost</option>
+          <option value="rating">Rating</option>
+          <option value="real_distance">Distance</option>
+        </select>
+
+      </div>
+
+      <div class="input-field col s12">
+        <label>Order</label>
+        <br><br>
+        <select class="ordering-type browser-default">
+          <option value="" disabled selected>Choose your option</option>
+          <option value="asc">Ascending</option>
+          <option value="dsc">Descending</option>
+        </select>
+    
+      </div>
+
+    </div>
+
+    <div class="col s12 m8 l9 resultsRow">
+      <h5>Results:</h5>
+      <ul class="collapsible popout"> 
+        <!--ajax calls get appended here-->
+
+      </ul>
+      <div class="recomended row"></div>
+      <div class="card-container"></div>
+    </div>
+
+  </div>
+
+  <!--needed for sticky footer to work-->
+  <div class="push"></div>
+  <!--needed for sticky footer to work-->
+  <footer class="foot page-footer">
+    <div class="container row">
+
+      <div class="col s12 m6 l6 left">
+        <a class="grey-text text-lighten-4">2019 Copyright &copy;</a>
+      </div>
+
+      <div class="col s12 m6 l6 center">
+        <a class="grey-text text-lighten-4" href="#top">Back to Top</a>
+        <a class="grey-text text-lighten-4 recomend" href="#!">Developers Recomendations</a>
+        <a class="grey-text text-lighten-4" href="card.html">Main Page</a>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="main.js"></script>
+  <script src="cards.js"></script>
+  <!-- <script src="carousel.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
 </body>
+
 </html>

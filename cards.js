@@ -2,30 +2,34 @@
 
 $(document).ready(function recomendedData() {
 
-    var favs = ["Marukin", "Fire%20on%20the%20Mountain%20Buffalo%20Wings", "Sizzle%20Pie", "Russell%20Street%20Bar.B.Que", "Screen%20Door", "Portland%20City%20Grill", "Pambiche", "Grassa", "Nicholas", "King%20Burrito", "Pip", "Sivalai%20Thai", "808%20Grindz"];
-    var row = $("<div>").attr("class", "row")
-    $(".card-container").append(row)
+  $("ul").empty();
 
-    $.each(favs, function (i, fav) {
-      var url = "https://developers.zomato.com/api/v2.1/search?entity_id=286&entity_type=city&q=" + fav;
-  
-      $.ajax({
-        method: "GET",
-        crossDomain: true,
-        url: url,
-        dataType: "json",
-        async: true,
-        headers: {
-          "user-key": "3247f4fa7ee79cabb69997b6827c2e80"
-        }
-  
-      }).then(function (data) {
-  
-        var getInfo = data.restaurants[0].restaurant;
-        var getname = getInfo.name;
-        var location = getInfo.location.address;
-        var rating = getInfo.user_rating.aggregate_rating;
-        var getImg = getInfo.featured_image;
+
+
+
+  var favs = ["Marukin", "Fire%20on%20the%20Mountain%20Buffalo%20Wings", "Sizzle%20Pie", "Russell%20Street%20Bar.B.Que", "Screen%20Door", "Portland%20City%20Grill", "Pambiche", "Grassa", "Nicholas", "King%20Burrito", "Pip", "Sivalai%20Thai", "808%20Grindz"];
+  var row = $("<div>").attr("class", "row")
+  $(".card-container").append(row)
+
+  $.each(favs, function (i, fav) {
+    var url = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + fav + "&location=portland";
+
+    $.ajax({
+      url: url,
+      headers: {
+        'Authorization': 'Bearer 8_4jqn4cEYADeOIS6LuGUDMAM5hKeV0ZiT6H_Uue8jkGw9OXDnXV_lRrI6U31H0VXF4pASKBgWWDBfQeBdD59xGzKfOiEB9p65JnULOSyWyZ-yRYU72DGQfTkuLmXXYx',
+      },
+      method: 'GET',
+      dataType: 'json',
+
+      success: function (data) {
+        console.log(data);
+
+
+        var getname = data.businesses[0].name;
+        var location = data.businesses[0].location.address1;
+        var rating = data.businesses[0].rating;
+        var getImg = data.businesses[0].image_url;
 
         var divCol = $("<div>").attr("class", "col s12 m6 ");
         var divCard = $("<div>").attr("class", "card small");
@@ -48,18 +52,19 @@ $(document).ready(function recomendedData() {
         span.text(getname);
         p.html(location + "<br>" + "Rating: " + rating)
 
-      });
-    });
+      }
 
-    $(".recomend").on("click", function() { 
-      row.empty();
-      $("ul").empty();
-      $("h5").empty();
-      $(".card-container").empty();
-      var h4 = $("<h4>").text("Developer's Recommendations");
-      $(".card-container").append(h4);
-      recomendedData();
-    })
+      });
+  });
+
+  $(".recomend").on("click", function () {
+    row.empty();
+    $("ul").empty();
+    $("h5").empty();
+    $(".card-container").empty();
+    var h4 = $("<h4>").text("Developer's Recommendations");
+    $(".card-container").append(h4);
+    recomendedData();
+  })
 
 });
-  
