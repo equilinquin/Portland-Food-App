@@ -40,4 +40,4 @@
 
 Using jQuery, each element of the DOM that was responsible for dynamic change (ie, dropdowns) was selected, and then an Ajax call was made to the APIs (one to Zomato to pull the restaraunt information and one to Google maps which displayed the map).
 
-https://img.shields.io/badge/Cuisine-Support%20Local%20Spots!-brightgreen# Group-Repo
+link to APP: https://tcanbolat.github.io/Portland-Food-App/
