@@ -3,6 +3,11 @@
 ## User Story
 AS A Portlandian I WANT a food app that will show all food trucks/hole in the wall places SO THAT I can experience a diverse cuisine.
 
+## Authors
+- [Abdullah Canbolat \* GitHub](https://github.com/tcanbolat)
+- [Elizabeth Garcia-Quiliqnuin \* GitHub](https://github.com/equilinquin)
+- [Spencer Purcell \* GitHub](https://github.com/Spencedesu)
+
 ## Introduction to our Project
 
 1. The purpose of our project/application was to allow users to experience some of the hidden gems of Portland's culinary scene. 
