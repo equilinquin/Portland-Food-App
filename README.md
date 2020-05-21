@@ -1,18 +1,20 @@
-# Group-Repo
+# Portland Cuisine
+
+## User Story
+AS A Portlandian I WANT a food app that will show all food trucks/hole in the wall places SO THAT I can experience a diverse cuisine.
 
 ## Introduction to our Project
 
-* The purpose of our project/application was to allow users to experience some of the hidden gems of Portland's culinary scene. 
+1. The purpose of our project/application was to allow users to experience some of the hidden gems of Portland's culinary scene. 
 
-* We wanted to make an application that would allow the user to select different parameters and then, from those preferences, a generated list would be provided including: 
-
-* name, 
-* price range, 
-* rating,
-* A photo of the establishment, 
-* location,
-* link to menu,
-* and hours of operation.
+2. We wanted to make an application that would allow the user to select different parameters and then, from those preferences, a generated list would be provided including: 
+- name, 
+- price range, 
+- rating,
+- A photo of the establishment, 
+- location,
+- link to menu,
+- and hours of operation.
 
 ## How it works
 
@@ -31,6 +33,11 @@
 
 
 ## Technologies
+- HTML
+- CSS
+- Javascript
+- jQuery
+- Materialize
 
 * The project requiered the use of 2 server side APIs and another third-party API. Our APIs are as follows:
 
@@ -41,3 +48,6 @@
 Using jQuery, each element of the DOM that was responsible for dynamic change (ie, dropdowns) was selected, and then an Ajax call was made to the APIs (one to Zomato to pull the restaraunt information and one to Google maps which displayed the map).
 
 link to APP: https://tcanbolat.github.io/Portland-Food-App/
+
+## Images of Deployed app
+
