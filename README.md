@@ -50,4 +50,11 @@ Using jQuery, each element of the DOM that was responsible for dynamic change (i
 link to APP: https://tcanbolat.github.io/Portland-Food-App/
 
 ## Images of Deployed app
-
+### Menu Page with developer recommendations
+![Landing-Page](./photos/firstpage.png)
+### Dropdown Menu
+![Dropdown-Menu](./photos/column-select.png)
+### Results page
+![Results-page](./photos/results.png)
+### Cuisine details
+![Result-cuisine-details](./photos/collapsepage.png)
